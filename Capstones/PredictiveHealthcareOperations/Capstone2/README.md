@@ -17,7 +17,8 @@ Capstone2/
 │       └── hcai_hospital_data_clean.csv
 ├── docs/
 ├── notebooks/
-│   └── 02_data_wrangling.ipynb
+│   ├── 02_data_wrangling.ipynb
+│   └── 03_exploratory_data_analysis.ipynb
 ├── reports/
 └── slides/
 ```
@@ -61,19 +62,70 @@ The Data Wrangling stage included:
 
 Missing values, negative values, and potential outliers were not automatically removed because their validity depends on the HCAI variable definitions and the characteristics of individual hospitals.
 
+## Exploratory Data Analysis
+
+The EDA stage examines the distribution and relationships of variables relevant to the project question, with particular attention to **hospital capacity, utilization, and total discharges (`DIS_TOT`)**.
+
+The analysis includes:
+
+* Univariate analysis of numerical and categorical features
+* Descriptive statistics and skewness
+* Distribution visualizations for selected numerical variables
+* Frequency analysis of categorical variables
+* Relationship analysis between `DIS_TOT` and selected capacity/utilization variables
+* Pearson correlation analysis
+* Multicollinearity screening
+* Identification of potential outliers and unusual data patterns
+* Identification of potential target leakage
+* Evaluation of candidate features for subsequent modeling
+
+### Key EDA Findings
+
+The EDA indicates that:
+
+* Hospital capacity varies substantially across facilities.
+* `LIC_BEDS`, `AVL_BEDS`, and `STF_BEDS` are relevant measures of hospital capacity.
+* Discharge and utilization variables have strong positive relationships with `DIS_TOT`.
+* Several operational, utilization, and financial variables are highly correlated and may contain redundant information.
+* `DIS_TOT` is right-skewed and includes legitimate observations from high-volume hospitals.
+* Missingness varies substantially across attributes and reporting periods.
+* Identifier and contact fields are not meaningful predictive features.
+* Discharge component variables require careful evaluation because they may introduce target leakage.
+* Engineered capacity measures, such as a bed-availability ratio, may be appropriate candidates for further evaluation during feature engineering.
+
+These findings provide the foundation for **preprocessing, feature selection, feature engineering, and predictive modeling**.
+
 ## Current Status
 
-**Completed:** Data Acquisition and Data Wrangling
+**Completed:**
 
-**Next:** Exploratory Data Analysis and preprocessing
+* Data Acquisition
+* Data Wrangling
+* Exploratory Data Analysis
 
-## Notebook
+**Next:**
 
-The Data Wrangling work is documented in:
+* Data Preprocessing
+* Feature Selection and Engineering
+* Predictive Model Development
+* Model Evaluation
+
+## Notebooks
+
+### Data Wrangling
 
 `notebooks/02_data_wrangling.ipynb`
+
+Documents the process of combining, cleaning, validating, and preparing the HCAI quarterly datasets.
+
+### Exploratory Data Analysis
+
+`notebooks/03_exploratory_data_analysis.ipynb`
+
+Documents the investigation of feature distributions, categorical variables, relationships with `DIS_TOT`, Pearson correlations, multicollinearity, and key EDA findings.
+
+## Processed Dataset
 
 The processed dataset is saved as:
 
 `data/processed/hcai_hospital_data_clean.csv`
-
