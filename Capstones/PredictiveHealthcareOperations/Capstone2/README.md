@@ -19,6 +19,7 @@ Capstone2/
 ├── notebooks/
 │   ├── 02_data_wrangling.ipynb
 │   └── 03_exploratory_data_analysis.ipynb
+|   └── 04_preprocessing_and_training.ipynb
 ├── reports/
 └── slides/
 ```
