@@ -103,12 +103,16 @@ These findings provide the foundation for **preprocessing, feature selection, fe
 * Data Wrangling
 * Exploratory Data Analysis
 
-**Next:**
+**In Progress:**
 
-* Data Preprocessing
+* Preprocessing and Training Data Development
+
+**Upcoming:**
+
 * Feature Selection and Engineering
 * Predictive Model Development
 * Model Evaluation
+* Final Project Conclusions
 
 ## Notebooks
 
@@ -123,6 +127,14 @@ Documents the process of combining, cleaning, validating, and preparing the HCAI
 `notebooks/03_exploratory_data_analysis.ipynb`
 
 Documents the investigation of feature distributions, categorical variables, relationships with `DIS_TOT`, Pearson correlations, multicollinearity, and key EDA findings.
+
+
+### Preprocessing and Training Data Development
+
+`notebooks/04_preprocessing_and_training.ipynb`
+
+Documents the selection of candidate features, missing-value handling, categorical encoding, numerical feature scaling, and preparation of training and testing datasets for predictive modeling.
+
 
 ## Processed Dataset
 
